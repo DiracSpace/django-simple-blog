@@ -1,8 +1,13 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Articles</title>
+    <link data-rh="true" rel="icon" href="https://i.ibb.co/K2y2485/warning.png">
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
   </head>
   <body>
     <h1>This is where you show the lists for your articles</h1>
@@ -10,7 +15,7 @@
       {% for article in articles %}
       <div class="article">
         <h2><a href="#">{{ article.title }}</a></h2>
-        <p>{{ article.content }}</p>
+        <p>{{ article.snippet }}</p>
         <p>{{ article.date }}</p>
       </div>
       {% endfor %}

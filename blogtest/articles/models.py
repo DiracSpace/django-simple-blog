@@ -15,3 +15,7 @@ class Articles(models.Model):
     # function for shell retrieval
     def __str__(self):
         return self.title
+
+    #  function for small preview of content
+    def snippet(self):
+        return self.content[:50] + ' ... '
