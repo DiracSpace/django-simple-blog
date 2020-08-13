@@ -1,11 +1,16 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+
+"""
+Functions for managing user ui and urls
+"""
 
 # function for about url
 def about(request):
-    # return http HttpResponse
-    return HttpResponse("about")
+    # returning html template render
+    return render(request, 'about.html')
 
 # function for home url
 def home(request):
-    # return http HttpResponse
-    return HttpResponse("home")
+    # returning html template render
+    return render(request, 'home.html')
