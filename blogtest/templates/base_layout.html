@@ -1,0 +1,36 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <title>BlogSpot</title>
+    <link data-rh="true" rel="icon" href="https://i.ibb.co/K2y2485/warning.png">
+    <!-- google fonts & icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+  </head>
+  <body>
+    <nav class="blue-grey darken-2">
+      <div class="nav-wrapper">
+        <a href="{% url 'articles:list' %}" class="brand-logo center">Artículos</a>
+      </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <!-- internal js -->
+    <script type="text/javascript">
+        // materialize init
+        document.addEventListener('DOMContentLoaded', (e) => {
+          M.AutoInit();
+        });
+    </script>
+    <!-- external js -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

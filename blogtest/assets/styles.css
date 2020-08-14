@@ -1,0 +1,10 @@
+/* for global changes */
+body {
+  font-family: Ubuntu;
+  background-color: #121212;
+}
+
+.article-text {
+  text-align: justify;
+  color: white;
+}
