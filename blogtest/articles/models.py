@@ -18,4 +18,4 @@ class Articles(models.Model):
 
     #  function for small preview of content
     def snippet(self):
-        return self.content[:50] + ' ... '
+        return self.content[:180] + ' ... '

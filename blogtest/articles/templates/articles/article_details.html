@@ -1,0 +1,9 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="container article-text">
+  <h3 class="center-align">{{ article.title }}</h3>
+  <p>{{ article.content }}</p>
+  <p>{{ article.date }}</p>
+</div>
+{% endblock %}
