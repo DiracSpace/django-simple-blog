@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from .models import Articles
-from django.http import HttpResponse
 
 # function for article list
 def articles_list(request):
