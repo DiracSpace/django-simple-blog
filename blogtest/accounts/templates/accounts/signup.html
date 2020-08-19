@@ -3,7 +3,7 @@
 {% block content %}
   <div class="container">
     <h5 class="white-text center-align">Sign up</h5>
-    <form class="site-form" action="/accounts/signup/" method="post">
+    <form class="site-form" action="{% url 'accounts:signup' %}" method="post">
       {% csrf_token %}
       {{ form }}
       <button type="submit" value="Signup" class="btn reen lighten-2 z-depth-0">Registrarse</button>
