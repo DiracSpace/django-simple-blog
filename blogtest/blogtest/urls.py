@@ -11,9 +11,9 @@ from views
 """
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    re_path(r'^about/$', views.about),
-    re_path(r'^$', views.home),
+    path('admin/', admin.site.urls, name="adminpanel"),
+    re_path(r'^about/$', views.about, name="about"),
+    re_path(r'^$', views.home, name="home"),
     re_path(r'^accounts/', include('accounts.urls')),
     re_path(r'^articles/', include('articles.urls')),
 ]

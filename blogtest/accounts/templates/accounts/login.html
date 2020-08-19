@@ -1,0 +1,12 @@
+{% extends 'base_layout.html'%}
+
+{% block content %}
+  <div class="container">
+    <h5 class="white-text center-align">Login</h5>
+    <form class="site-form" action="{% url 'accounts:login' %}" method="post">
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit" value="Login" class="btn reen lighten-2 z-depth-0">Login</button>
+    </form>
+  </div>
+{% endblock %}

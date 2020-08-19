@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Home</title>
-  </head>
-  <body>
-    <h1>Welcome, this is BlogSpot</h1>
-    <p>Here you can find any blogs about anything</p>
-    <a href="/articles/">Artículos</a>
-    <a href="/admin/">Admin</a>
-    <a href="/accounts/signup/">Signup</a>
-    <a>Webchat</a>
-  </body>
-</html>
+{% extends 'base_layout.html' %}
+
+{% block content %}
+  <h1>Welcome, this is BlogSpot</h1>
+  <p>Here you can find any blogs about anything</p>
+  <a href="/articles/">Artículos</a>
+  <a href="/admin/">Admin</a>
+  <a href="/accounts/signup/">Signup</a>
+  <a href="/accounts/login/">Login</a>
+  <a>Webchat</a>
+{% endblock %}
