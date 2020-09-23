@@ -1,15 +1,77 @@
 /* for global changes */
-body {
-  font-family: Ubuntu;
+* {
+  margin: 0;
+  padding: 0;
   /* background-color: #121212; */
 }
 
-.article-text {
+nav {
+  background-color: #666666 !important;
+}
+
+nav ul a {
+  color: #53f7a0 !important;
+}
+
+nav .brand-logo {
+  color: #53f7a0 !important;
+}
+
+@media screen and (max-width: 700px) {
+  div.socialheader { 
+      display: none;
+  }
+}
+
+@media screen and (min-width: 699px) {
+  li.socials-sidenav {
+      display: none;
+  }
+}
+
+header {
+  position: relative;
+  /* background-image: url("/img/codebackground2.png"); */
+  background-color: gray;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+div.overlay {
+  position: absolute;
+  float: left;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 30;
+}
+
+div.overlay-text h2 {
+  color: white;
+  text-align: center;
+  font-family: "Roboto",sans-serif;
+  font-size: 4.5rem;
+  padding-top: 3cm;
+  font-weight: 300;
+}
+
+div.overlay-text p {
+  color: white;
+  text-align: center;
+  font-family: "Roboto",sans-serif;
+  font-size: 1.25rem;
+}
+
+div.article-text {
   text-align: justify;
   color: white;
 }
 
-.article-img {
+img.article-img {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -22,3 +84,5 @@ body {
     margin-right: auto;
     width: 50%;
 }
+
+

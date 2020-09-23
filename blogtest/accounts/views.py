@@ -35,5 +35,5 @@ def userlogin(request):
 
 def userlogout(request):
     if request.method == 'POST':
-        logout = (request)
+        logout(request)
         return redirect('articles:list')
