@@ -1,6 +1,17 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
+<nav>
+  <div class="nav-wrapper container">
+    <a href="{% url 'articles:list' %}" class="brand-logo">Artículos</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/articles/">Artículos</a></li>
+      <li><a href="/admin/">Administración</a></li>
+      <li><a href="/accounts/signup/">Registro</a></li>
+      <li><a href="/accounts/login/">Inicia Sesión</a></li>
+    </ul>
+  </div>
+</nav>
 <div class="container article-text">
   <h3 class="center-align">{{ article.title }}</h3>
   <p>{{ article.content }}</p>

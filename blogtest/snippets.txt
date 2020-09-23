@@ -1,0 +1,6 @@
+<li>
+          <form id="logout-action" class="site-form" action="{% url 'accounts:logout' %}" data-method="post">
+            {% csrf_token %}
+            <button class="btn waves-effect waves-light" type="submit" name="action">Logout</button>
+          </form>
+        </li>
