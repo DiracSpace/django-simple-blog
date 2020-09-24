@@ -5,10 +5,11 @@
   <div class="nav-wrapper container">
     <a href="{% url 'articles:list' %}" class="brand-logo">Artículos</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="#/">Crear nuevo</a></li>
+      <li><a href="/">Crear nuevo</a></li>
+      <li><a href="/articles/create/">Crear nuevo</a></li>
       <li><a href="#">Editar</a></li>
       <li><a href="#">Eliminar</a></li>
-      <li><a href="#">Cerrar Sesión</a></li>
+      <li><a id="logout" href="#">Cerrar Sesión</a></li>
     </ul>
   </div>
 </nav>
@@ -24,5 +25,12 @@
     </div>
   </div>
 </div>
+<form id="logout-action" class="site-form" action="{% url 'accounts:logout' %}" data-method="post">
+  {% csrf_token %}
+  <input style="display: none;" type="submit" name="action" />
+</form>
+<script type="text/javascript">
+  document.getElementById("logout").addEventListener("click", (e) => { document.getElementById("logout-action").submit(); });
+</script>
 {% endfor %}
 {% endblock %}

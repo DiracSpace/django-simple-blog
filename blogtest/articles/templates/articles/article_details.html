@@ -1,21 +1,41 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
+<style type="text/css">
+  div.article-text {
+    color: black;
+    text-align: justify;
+  }
+
+  img.article-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+</style>
 <nav>
   <div class="nav-wrapper container">
     <a href="{% url 'articles:list' %}" class="brand-logo">Artículos</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="/articles/">Artículos</a></li>
-      <li><a href="/admin/">Administración</a></li>
-      <li><a href="/accounts/signup/">Registro</a></li>
-      <li><a href="/accounts/login/">Inicia Sesión</a></li>
+      <li><a id="logout" href="#">Cerrar Sesión</a></li>
     </ul>
   </div>
 </nav>
-<div class="container article-text">
-  <h3 class="center-align">{{ article.title }}</h3>
-  <p>{{ article.content }}</p>
-  <p>{{ article.date }}</p>
+<div class="container">
+  <div class="article-text">
+    <h3 class="center-align">{{ article.title }}</h3>
+    <p>{{ article.content }}</p>
+    <p>{{ article.date }}</p>
+  </div>
 </div>
 <img class="materialboxed article-img" src="{{ article.thumbnail.url }}">
+<form id="logout-action" class="site-form" action="{% url 'accounts:logout' %}" data-method="post">
+  {% csrf_token %}
+  <input style="display: none;" type="submit" name="action" />
+</form>
+<script type="text/javascript">
+  document.getElementById("logout").addEventListener("click", (e) => { document.getElementById("logout-action").submit(); });
+</script>
 {% endblock %}

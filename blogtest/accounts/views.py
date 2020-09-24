@@ -10,19 +10,29 @@ from django.contrib.auth import login, logout
 
 # function for usersignup
 def usersignup(request):
+    # if request has data
     if request.method == 'POST':
+        # create instance of form for new user
         form = UserCreationForm(request.POST)
+        # if data in form is validated
         if form.is_valid():
+            # save to db
             user = form.save()
-            # user registration and redirection to articles
+            # login the new user
             login(request, user)
-            return redirect('articles:list')
+            # if unauthenticated user logins, redirect them to 
+            # part of site they wanted to go 
+            return redirect(request.POST.get('next')) if 'next' in request.POST else redirect('articles:list')
     else:
+        # return the original empty form
         form = UserCreationForm()
+    # display empty form with validation errors
     return render(request, 'accounts/signup.html', { 'form':form })
 
 def userlogin(request):
+    # if request has data
     if request.method == 'POST':
+        # create instance of form for new user
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
             # user login and redirection to articles
@@ -30,7 +40,9 @@ def userlogin(request):
             login(request, user)
             return redirect('articles:list')
     else:
+        # return the original empty form
         form = AuthenticationForm()
+    # display empty form with validation errors
     return render(request, 'accounts/login.html', { 'form':form })
 
 def userlogout(request):
