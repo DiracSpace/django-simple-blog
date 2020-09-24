@@ -6,7 +6,12 @@
     <form class="site-form" action="{% url 'accounts:login' %}" method="post">
       {% csrf_token %}
       {{ form }}
-      <button type="submit" value="Login" class="btn reen lighten-2 z-depth-0">Login</button>
+      {% if request.GET.next %}
+        <input type="hidden" name="next" value="{{ request.GET.next }}"/>
+      {% endif %}
+      <div class="center-align">
+        <button type="submit" value="Login" class="btn reen lighten-2 z-depth-0">Login</button>
+      </div>
     </form>
   </div>
 {% endblock %}

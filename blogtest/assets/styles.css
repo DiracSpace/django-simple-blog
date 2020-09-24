@@ -67,8 +67,8 @@ div.overlay-text p {
 }
 
 div.article-text {
+  color: black;
   text-align: justify;
-  color: white;
 }
 
 img.article-img {

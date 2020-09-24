@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 """
 Database management for articles
@@ -14,6 +15,12 @@ class Articles(models.Model):
     slug = models.SlugField(max_length=40)
     date = models.DateTimeField(auto_now_add=True)
     thumbnail = models.ImageField(default='article-logo.jpg', blank=True)
+    # associate article model with user field
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        default=None
+    )
 
     # function for shell retrieval
     def __str__(self):
